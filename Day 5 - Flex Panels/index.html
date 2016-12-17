@@ -24,7 +24,7 @@
   .panels {
     min-height:100vh;
     overflow: hidden;
-    display: flex;
+    display: flex; /*Changes orientation of panels to column*/
   }
 
   .panel {
@@ -42,10 +42,10 @@
     font-size: 20px;
     background-size:cover;
     background-position:center;
-    flex: 1;
-    justify-content: center;
+    flex: 1; /*Panels will evenly distribute the extra space between them*/
+    justify-content: center; /*Centers the content in each panel*/
     display: flex;
-    flex-direction: column;
+    flex-direction: column; /*vertically centers panel content in the middle*/
   }
 
 
@@ -60,12 +60,14 @@
     margin:0;
     width: 100%;
     transition:transform 0.5s;
+    /*Next segment centers the content on each panel*/
     flex: 1 0 auto;
     display:flex;
     justify-content: center;
     align-items: center;
   }
 
+   /*Next segment places a select portion of panel content off screen until it is activated*/
   .panel > *:first-child { transform: translateY(-100%); }
   .panel.open-active > *:first-child { transform: translateY(0); }
   .panel > *:last-child { transform: translateY(100%); }
@@ -81,6 +83,7 @@
     font-size: 4em;
   }
 
+   /*The event that will happen when the panels are opened and actived*/
   .panel.open {
     flex: 5;
     font-size:40px;
